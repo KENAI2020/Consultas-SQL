@@ -2,31 +2,36 @@
 1.- Seleccione todos los empleados que no tengan jefe
 R.- SELECT * FROM employees WHERE reportsTO IS NULL;
 
-
 2.- Seleccione todoslos empledados que son jefes
 R.- SELECT * FROM employees WHERE employeeNumber IN 
    (SELECT DISTINCT reportsTO FROM employees WHERE reportsTO IS NOT NULL);
 
-
 3.- seleccione todos los empleados que noson jefes
 R.- SELECT * FROM employees WHERE employeeNumber NOT IN 
    (SELECT DISTINCT reportsTO FROM employees WHERE reportsTO IS NOT NULL);
+   
 4.- Seleccione todas las columnas de los clientes que se encuentren en usa 
 R.- SELECT * FROM customers WHERE country = 'USA';
+
 5.- Seleccione el nombre y telefono de los clientes cuyo nombre empiece con M
 R.- SELECT customerName, phone FROM customers WHERE customerName LIKE 'M%';
+
 6.- Seleccione las columnas delos clientes que se encuentren en Alemania y su nombre contenga 
 '&' ordenados nombre descendentemente
 R.-SELECT * FROM customers WHERE country = 'Germany' AND customerName LIKE '%&%' 
-ORDER BY customerName;  O    SELECT * FROM customers WHERE country = 'Germany' AND customerName LIKE '%&%'
+ORDER BY customerName;   O    SELECT * FROM customers WHERE country = 'Germany' AND customerName LIKE '%&%'
 ORDER BY customerName DESC;ç
+
 7.- Seleccione todas las columnas ordenadas realizadas en año 2004 ordenadas por frcha de envio  
 R.-  SELECT * FROM orders WHERE orderdate BETWEEN "2004-01-01" AND "2004-12-31" ORDER BY ShippedDate;
+
 8.- Seleccione todas las columnas de los pagos realizados en 2003 cuyo monto sea mayor sea mayor 
 o igual a 1000 ordenados por monto descendentemente
 R.- SELECT * FROM payments WHERE (paymentDate >= "2003-01-01" AND paymentDate <="2003-12-31") AND 
 amount >= 1000 ORDER BY amount DESC;
+
 9.- Seleccione los 10 pagos mas altos del 2004
 R.- SELECT * FROM payments WHERE paymentDate BETWEEN "2004-01-01" AND "2004-12-31" ORDER BY amount DESC LIMIT 10;
+
 10.- Seleccione los 10 pagos mas bajos del 2004
 R.- SELECT * FROM payments WHERE paymentDate BETWEEN "2004-01-01" AND "2004-12-31" ORDER BY amount ASC LIMIT 10
