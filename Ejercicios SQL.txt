@@ -20,7 +20,7 @@ R.- SELECT customerName, phone FROM customers WHERE customerName LIKE 'M%';
 '&' ordenados nombre descendentemente
 R.-SELECT * FROM customers WHERE country = 'Germany' AND customerName LIKE '%&%' 
 ORDER BY customerName;   O    SELECT * FROM customers WHERE country = 'Germany' AND customerName LIKE '%&%'
-ORDER BY customerName DESC;ç
+ORDER BY customerName DESC;
 
 7.- Seleccione todas las columnas ordenadas realizadas en año 2004 ordenadas por frcha de envio  
 R.-  SELECT * FROM orders WHERE orderdate BETWEEN "2004-01-01" AND "2004-12-31" ORDER BY ShippedDate;
@@ -38,7 +38,7 @@ R.- SELECT * FROM payments WHERE paymentDate BETWEEN "2004-01-01" AND "2004-12-3
 
 11.- Seleccionar todos los empleados de las oficinas de 'USA'
 R.-SELECT employees.*, offices.country FROM employees JOIN offices ON employees.officeCode = offices.officeCode 
-WHERE offices.country ='USA'
+WHERE offices.country ='USA';
 
 12.- Seleccionar el monto total de ventas de los productos de la linea 'Motorcycles' 
 R.- SELECT SUM (payment.amount) AS total_ventas
@@ -47,4 +47,4 @@ FROM
 payment JOIN customers ON payment.customerNomber= cutomers.custumerNumber JOIN order ON customers.customerNumber=order.customerNumber JOIN orderdetail on orders.orderNumber=orderDetail.orderNumber JOIN products on orderdetail.productcode= products.productCode JOIN productline on products.productLine = productLines.productline
 
 WHERE
-productlines.productline"motorcycles"
+productlines.productline"motorcycles";
